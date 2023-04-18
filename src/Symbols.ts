@@ -4,7 +4,7 @@ export const STOCKS = [
     {
         stockName: "双汇发展",
         stockCode: 'SZ000895',
-        begin: '2010/1/1',
+        begin: '2015/6/1',
         modifyProfile: { // 一季报、中报、三季报、年报的合并时间为：4/29 7/29 9/29 1/29，会有所出入
             '2011': 12.6,
             '2012': 19.4,
@@ -16,14 +16,14 @@ export const STOCKS = [
             '2018': 46.5,
             '2019': 51.7,
             '2020': 57.8,
-            '2021': 44.3,
+            '2021': 55, // modify
             '2022': 52.2,
         }
     },
     {
         stockName: "片仔癀",
         stockCode: 'SH600436',
-        begin: '2010/1/1',
+        begin: '2014/1/1',
         modifyProfile: {
             '2011': 2.52,
             '2012': 3.19,
@@ -42,7 +42,7 @@ export const STOCKS = [
     {
         stockName: "云南白药",
         stockCode: 'SZ000538',
-        begin: '2010/1/1',
+        begin: '2014/1/1',
         modifyProfile: {
             '2011': 11.8,
             '2012': 15.6,

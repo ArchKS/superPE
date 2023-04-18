@@ -54,6 +54,7 @@ const getXueqiuKline = (stockName: string, stockCode: string, Begin: string, mod
     };
 
     JsonObj.stockData = processModifyPE(JsonObj.stockData, JsonObj.modifyProfile);
+    JsonObj.stockData = JsonObj.stockData.filter(v => v.modifyPE !== 0);
 
     fs.writeFile(`./assets/${stockName}.json`, JSON.stringify(JsonObj), () => {
         console.log(`Have Written ${stockName}.json`);
@@ -66,7 +67,7 @@ function processModifyPE(dataArr: { [key in iFields]: string | number; }[], mp: 
         let { timestamp, market_capital } = item;
         let d = new Date(timestamp);
         let year = d.getFullYear(),
-            smp = mp[year - 1]; // 2011年应该用2010年年末的业绩
+            smp = mp[year]; 
 
         if (smp) {
             item.modifyPE = Number((Number(market_capital) / 10000 / 10000 / smp).toFixed(2));
